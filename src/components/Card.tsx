@@ -5,7 +5,7 @@ import { ShareIcon } from "../icons/ShareIcon";
 interface CardProps{
     title: string,
     link: string,
-    type: "youtube" | "tweet"
+    type: "video" | "tweet"
 }
 export function Card({title,link,type}: CardProps) {
   return (
@@ -20,7 +20,7 @@ export function Card({title,link,type}: CardProps) {
             <a href={link} target="_blank"><ShareIcon size="md" /></a>
             <DeleteIcon size="md" />
           </div>
-        </div>{type==="youtube" && <iframe className="w-full py-5" src={link.replace('youtu.be','youtube.com/embed')} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>} 
+        </div>{type==="video" && <iframe className="w-full py-5" src={link.replace('youtu.be','youtube.com/embed')} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>} 
         
         {type==="tweet"  &&  <blockquote className="twitter-tweet">
             <a href={link.replace('x.com','twitter.com')}></a>
